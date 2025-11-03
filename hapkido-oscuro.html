@@ -3,86 +3,571 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martial Beasts Hapkido</title>
+  <meta name="description" content="Martial Beasts Hapkido - Escuela de Hapkido en CDMX. Defensa personal, disciplina y comunidad. Clases para jóvenes y adultos. ¡Agenda tu clase muestra!">
+  <meta name="keywords" content="Hapkido, artes marciales, defensa personal, CDMX, Iztapalapa, Martial Beasts, dojo, Shinki Mudowon">
+  <meta name="author" content="Martial Beasts Hapkido">
+  <meta property="og:title" content="Martial Beasts Hapkido - Arte Marcial Coreano en CDMX">
+  <meta property="og:description" content="Aprende Hapkido con nosotros. La fuerza de la bestia, la disciplina del arte. Clases en Iztapalapa, CDMX.">
+  <meta property="og:type" content="website">
+  <title>Martial Beasts Hapkido - Arte Marcial Coreano en CDMX</title>
   <style>
-    body { font-family: 'Impact', Arial, sans-serif; margin: 0; padding: 0; background: #000; color: #eee; }
-    header { background: linear-gradient(180deg, #111, #000); color: #f5c542; text-align: center; padding: 2rem; border-bottom: 4px solid #f54242; }
-    section { padding: 2rem; border-bottom: 1px solid #333; background: #111; }
-    h2 { color: #f54242; margin-bottom: 1rem; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
-    p, li { font-size: 1.1rem; line-height: 1.6; }
-    .highlight { color: #f5c542; font-weight: bold; }
-    .cta { background: #f54242; color: white; padding: 1rem 2rem; display: inline-block; margin-top: 1rem; border-radius: 8px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
-    .cta:hover { background: #d93636; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-    footer { background: #111; color: #777; text-align: center; padding: 1rem; border-top: 2px solid #f54242; }
-    .logo-main { max-width: 250px; margin: 1rem auto; display: block; filter: drop-shadow(0 0 10px #f54242); }
-    .logo-linaje { max-width: 180px; display:block; margin: 1rem auto; filter: drop-shadow(0 0 6px #f5c542); }
-    .logo-deco { max-width: 150px; opacity: 0.2; display:block; margin: 1rem auto; }
-    header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 3px; }
-    header p { font-size: 1.2rem; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(17, 17, 17, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(245, 66, 66, 0.3);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      color: #f5c542;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      background: #f54242;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1a0000 0%, #000 50%, #1a0000 100%);
+      color: #f5c542;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      border-bottom: 4px solid #f54242;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(245, 66, 66, 0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      border-bottom: 1px solid #222;
+      background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+      position: relative;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section:nth-child(even) {
+      background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin: 1rem 0;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 20px rgba(245, 66, 66, 0.5);
+    }
+
+    h2 {
+      color: #f54242;
+      margin-bottom: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #f5c542, transparent);
+    }
+
+    h3 {
+      color: #f5c542;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: #f5c542;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(245, 197, 66, 0.3);
+    }
+
+    /* Buttons */
+    .cta {
+      background: linear-gradient(135deg, #f54242 0%, #d93636 100%);
+      color: white;
+      padding: 1rem 2.5rem;
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(245, 66, 66, 0.4);
+      border: 2px solid transparent;
+    }
+
+    .cta:hover {
+      background: linear-gradient(135deg, #d93636 0%, #f54242 100%);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 25px rgba(245, 66, 66, 0.6);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      border: 2px solid #f5c542;
+      color: #f5c542;
+    }
+
+    .cta-secondary:hover {
+      background: #f5c542;
+      color: #000;
+      box-shadow: 0 6px 25px rgba(245, 197, 66, 0.4);
+    }
+
+    /* Grid layouts */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .grid-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid #333;
+      transition: all 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-5px);
+      border-color: #f54242;
+      box-shadow: 0 5px 20px rgba(245, 66, 66, 0.2);
+    }
+
+    /* Benefits section */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      background: linear-gradient(135deg, rgba(245, 66, 66, 0.1) 0%, rgba(245, 197, 66, 0.05) 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 2px solid rgba(245, 66, 66, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-10px);
+      border-color: #f54242;
+      box-shadow: 0 10px 30px rgba(245, 66, 66, 0.3);
+    }
+
+    .benefit-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a0a0a;
+      color: #777;
+      text-align: center;
+      padding: 2rem;
+      border-top: 3px solid #f54242;
+    }
+
+    /* Logos */
+    .logo-main {
+      max-width: 280px;
+      margin: 1rem auto;
+      display: block;
+      filter: drop-shadow(0 0 15px rgba(245, 66, 66, 0.6));
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-main:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-linaje {
+      max-width: 200px;
+      display: block;
+      margin: 2rem auto;
+      filter: drop-shadow(0 0 10px rgba(245, 197, 66, 0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .logo-linaje:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-deco {
+      max-width: 120px;
+      opacity: 0.15;
+      display: block;
+      margin: 2rem auto;
+    }
+
+    /* Contact info styling */
+    .contact-info {
+      background: rgba(245, 66, 66, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      border-left: 4px solid #f54242;
+      margin: 2rem 0;
+    }
+
+    .contact-info p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Info boxes */
+    .info-box {
+      background: linear-gradient(135deg, rgba(245, 197, 66, 0.1) 0%, rgba(245, 66, 66, 0.1) 100%);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #f5c542;
+      margin: 1rem 0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '▶';
+      color: #f54242;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header { padding: 6rem 1rem 3rem; }
+      section { padding: 3rem 1rem; }
+      nav ul { padding: 0.5rem; }
+      nav a { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
+      .grid, .benefits-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+    }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="MB_LOGO.jpeg" alt="Logo Martial Beasts" class="logo-main">
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#entrenamiento">Entrenamiento</a></li>
+      <li><a href="#costos">Costos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header id="inicio">
+    <img src="MB_LOGO.PNG" alt="Logo Martial Beasts Hapkido" class="logo-main">
     <h1>Martial Beasts Hapkido</h1>
     <p><em>La fuerza de la bestia, la disciplina del arte</em></p>
-    <a href="#contacto" class="cta">Quiero una clase muestra</a>
+    <div style="margin-top: 2rem;">
+      <a href="#contacto" class="cta">Quiero una clase muestra</a>
+      <a href="#entrenamiento" class="cta cta-secondary">Ver horarios</a>
+    </div>
   </header>
 
-  <section>
-    <h2>Quiénes somos</h2>
-    <p>Fundado en 2018, <span class="highlight">Martial Beasts Hapkido</span> nació de la fusión entre la agresividad instintiva de la bestia y la técnica refinada de un arte marcial. Herederos de Hosinsool (Hosinkwan), hoy ofrecemos un entrenamiento que conserva la herencia, pero suma nuestra esencia: potencia indomable y disciplina absoluta.</p>
-    <img src="BYBG_LOGO.jpeg" alt="Caligrafía decorativa" class="logo-deco">
-  </section>
-
-  <section>
-    <h2>Filosofía</h2>
-    <p>El Hapkido significa <em>el camino de la unión de la energía</em>. Aquí, cada movimiento enseña respeto, voluntad y convicción. Nuestra práctica ayuda a regular el temperamento y a convertir la disciplina en fortaleza interior. La verdadera fuerza nace del control, no del caos.</p>
-  </section>
-
-  <section>
-    <h2>Linaje</h2>
-    <p>Somos parte de <span class="highlight">Shinki Mudowon Hapkido</span>, organización fundada por el GM Shin Hank Shik. Una casa marcial dedicada a preservar y expandir las artes coreanas en el mundo.</p>
-    <img src="WSKMW_LOGO.jpeg" alt="Logo World Shinki Mudowon" class="logo-linaje">
-  </section>
-
-  <section>
-    <h2>Instructor</h2>
-    <p><span class="highlight">Sabomnim Christian López</span>, con más de 20 años en artes marciales, 3er Dan en Hapkido. Inspirado en la filosofía del bambú: crecer lento pero fuerte y flexible. Un eterno estudiante que guía con humildad y disciplina.</p>
-  </section>
-
-  <section>
-    <h2>Entrenamiento</h2>
-    <ul>
-      <li><strong>Ubicación:</strong> Doyang "Kyeongju Fenix", Canal de Chalco 52, Iztapalapa, CDMX</li>
-      <li><strong>Horarios:</strong> Lunes y miércoles 20:00–21:30; Sábados 9:00–11:00</li>
-      <li><strong>Clases:</strong> Defensa personal, jóvenes y adultos desde 15 años</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Costos (2026)</h2>
-    <div class="grid">
-      <div><strong>Mensualidad:</strong> $650</div>
-      <div><strong>Examen:</strong> $750</div>
-      <div><strong>Uniformes:</strong> Delgado $1100 / Grueso $1350</div>
-      <div><strong>Equipo:</strong> Careta $1200, Guantes $680, Espinilleras $500, Peto $750, Bucal $100</div>
-      <div><strong>Accesorios:</strong> Tenis $1200, Maleta $1600</div>
+  <!-- Quiénes somos -->
+  <section id="nosotros">
+    <div class="container">
+      <h2>Quiénes somos</h2>
+      <p style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto;">
+        Fundado en 2018, <span class="highlight">Martial Beasts Hapkido</span> nació de la fusión entre la agresividad instintiva de la bestia y la técnica refinada de un arte marcial. Herederos de Hosinsool (Hosinkwan), hoy ofrecemos un entrenamiento que conserva la herencia, pero suma nuestra esencia: potencia indomable y disciplina absoluta.
+      </p>
+      <img src="BYBG_LOGO.png" alt="Caligrafía decorativa coreana" class="logo-deco">
     </div>
   </section>
 
-  <section>
-    <h2>Comunidad</h2>
-    <p>Entrenamiento técnico, fuerte y riguroso que te empuja a superar tus límites. Pero también comunidad: amistades sólidas, confianza y disciplina compartida. En el tatami somos bestias; fuera de él, amigos.</p>
-    <img src="BYBG_LOGO.jpeg" alt="Decoración caligrafía" class="logo-deco">
+  <!-- Beneficios -->
+  <section id="beneficios">
+    <div class="container">
+      <h2>¿Por qué Hapkido?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🥋</div>
+          <h3>Defensa Personal Real</h3>
+          <p>Aprende técnicas efectivas de defensa personal aplicables en situaciones reales. Hapkido combina golpes, patadas, luxaciones y proyecciones.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💪</div>
+          <h3>Condición Física</h3>
+          <p>Mejora tu fuerza, flexibilidad, resistencia y coordinación. Entrenamiento completo para cuerpo y mente.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🧠</div>
+          <h3>Disciplina Mental</h3>
+          <p>Desarrolla autocontrol, confianza y enfoque. Aprende a regular el temperamento y convertir la disciplina en fortaleza interior.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h3>Comunidad</h3>
+          <p>Forma parte de una comunidad de personas comprometidas. Amistades sólidas basadas en respeto mutuo y crecimiento conjunto.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Metas y Logros</h3>
+          <p>Sistema de grados y exámenes que te permiten medir tu progreso y establecer objetivos claros en tu camino marcial.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h3>Energía y Vitalidad</h3>
+          <p>Aumenta tu energía diaria, reduce el estrés y mejora tu calidad de vida a través del movimiento consciente.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Filosofía -->
+  <section>
+    <div class="container">
+      <h2>Filosofía</h2>
+      <div class="info-box">
+        <p style="text-align: center; font-size: 1.2rem;">
+          El Hapkido significa <em>el camino de la unión de la energía</em>. Aquí, cada movimiento enseña respeto, voluntad y convicción. Nuestra práctica ayuda a regular el temperamento y a convertir la disciplina en fortaleza interior. <span class="highlight">La verdadera fuerza nace del control, no del caos.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Linaje -->
+  <section>
+    <div class="container">
+      <h2>Linaje</h2>
+      <p style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto;">
+        Somos parte de <span class="highlight">Shinki Mudowon Hapkido</span>, organización fundada por el GM Shin Hank Shik. Una casa marcial dedicada a preservar y expandir las artes coreanas en el mundo.
+      </p>
+      <img src="WSKMW_LOGO.PNG" alt="Logo World Shinki Mudowon Hapkido" class="logo-linaje">
+    </div>
+  </section>
+
+  <!-- Instructor -->
+  <section>
+    <div class="container">
+      <h2>Instructor</h2>
+      <div class="info-box" style="max-width: 900px; margin: 0 auto;">
+        <p style="text-align: center; font-size: 1.2rem;">
+          <span class="highlight">Sabomnim Christian López</span>, con más de 20 años en artes marciales, 3er Dan en Hapkido. Inspirado en la filosofía del bambú: <em>crecer lento pero fuerte y flexible</em>. Un eterno estudiante que guía con humildad y disciplina.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entrenamiento -->
+  <section id="entrenamiento">
+    <div class="container">
+      <h2>Entrenamiento</h2>
+      <div class="grid">
+        <div class="grid-item">
+          <h3>📍 Ubicación</h3>
+          <p>Doyang "Kyeongju Fenix"<br>
+          Canal de Chalco 52<br>
+          Iztapalapa, CDMX</p>
+        </div>
+        <div class="grid-item">
+          <h3>🕐 Horarios</h3>
+          <p><strong>Lunes y Miércoles:</strong><br>20:00 – 21:30 hrs</p>
+          <p><strong>Sábados:</strong><br>9:00 – 11:00 hrs</p>
+        </div>
+        <div class="grid-item">
+          <h3>👥 Clases</h3>
+          <p>Defensa personal<br>
+          Jóvenes y adultos<br>
+          Desde 15 años</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="#contacto" class="cta">Agenda tu clase muestra gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Costos -->
+  <section id="costos">
+    <div class="container">
+      <h2>Costos (2026)</h2>
+      <div class="grid">
+        <div class="grid-item">
+          <h3>💳 Mensualidad</h3>
+          <p style="font-size: 1.5rem; color: #f5c542; font-weight: bold;">$650</p>
+          <p>Pago mensual</p>
+        </div>
+        <div class="grid-item">
+          <h3>🥋 Uniformes</h3>
+          <p><strong>Delgado:</strong> $1,100</p>
+          <p><strong>Grueso:</strong> $1,350</p>
+        </div>
+        <div class="grid-item">
+          <h3>📋 Examen de Grado</h3>
+          <p style="font-size: 1.3rem; color: #f5c542; font-weight: bold;">$750</p>
+        </div>
+        <div class="grid-item">
+          <h3>🥊 Equipo de Protección</h3>
+          <p>Careta: $1,200<br>
+          Guantes: $680<br>
+          Espinilleras: $500<br>
+          Peto: $750<br>
+          Bucal: $100</p>
+        </div>
+        <div class="grid-item">
+          <h3>👟 Accesorios</h3>
+          <p>Tenis: $1,200<br>
+          Maleta: $1,600</p>
+        </div>
+      </div>
+      <div class="info-box" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p style="text-align: center;"><strong>Nota:</strong> El equipo de protección se adquiere gradualmente según avances en tu entrenamiento. No necesitas todo desde el inicio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comunidad -->
+  <section>
+    <div class="container">
+      <h2>Comunidad</h2>
+      <p style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto 2rem;">
+        Entrenamiento técnico, fuerte y riguroso que te empuja a superar tus límites. Pero también comunidad: amistades sólidas, confianza y disciplina compartida. <span class="highlight">En el tatami somos bestias; fuera de él, amigos.</span>
+      </p>
+      <img src="BYBG_LOGO.png" alt="Caligrafía coreana decorativa" class="logo-deco">
+    </div>
+  </section>
+
+  <!-- Contacto -->
   <section id="contacto">
-    <h2>Contacto</h2>
-    <p>📲 Instagram: @martialbeasts.hapkido.mexico</p>
-    <p>📧 Email: martialbeasts.hapkido@gmail.com</p>
-    <a href="mailto:martialbeasts.hapkido@gmail.com" class="cta">Escríbenos</a>
+    <div class="container">
+      <h2>Contacto</h2>
+      <div class="contact-info" style="max-width: 700px; margin: 0 auto;">
+        <p style="text-align: center;">📱 <strong>Instagram:</strong> <a href="https://instagram.com/martialbeasts.hapkido.mexico" target="_blank" style="color: #f5c542; text-decoration: none;">@martialbeasts.hapkido.mexico</a></p>
+        <p style="text-align: center;">📧 <strong>Email:</strong> <a href="mailto:martialbeasts.hapkido@gmail.com" style="color: #f5c542; text-decoration: none;">martialbeasts.hapkido@gmail.com</a></p>
+      </div>
+      <div class="social-links">
+        <a href="mailto:martialbeasts.hapkido@gmail.com" class="cta">📧 Escríbenos</a>
+        <a href="https://instagram.com/martialbeasts.hapkido.mexico" target="_blank" class="cta cta-secondary">📱 Síguenos en Instagram</a>
+      </div>
+      <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(245, 66, 66, 0.05); border-radius: 15px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <h3 style="color: #f54242; margin-bottom: 1rem;">¿Listo para comenzar tu camino?</h3>
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Agenda tu clase muestra <strong style="color: #f5c542;">GRATUITA</strong> y descubre el poder del Hapkido</p>
+        <a href="mailto:martialbeasts.hapkido@gmail.com?subject=Solicitud%20de%20Clase%20Muestra&body=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20clase%20muestra.%0A%0ANombre%3A%20%0AEdad%3A%20%0ATel%C3%A9fono%3A%20%0AHorario%20de%20preferencia%3A%20" class="cta" style="font-size: 1.2rem; padding: 1.2rem 3rem;">¡Quiero mi clase muestra!</a>
+      </div>
+    </div>
   </section>
 
   <footer>

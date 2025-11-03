@@ -48,6 +48,19 @@
       transform: translateY(-2px);
     }
 
+    #theme-switcher {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1001;
+      background: #f5c542;
+      color: #000;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     /* Header */
     header {
       background: linear-gradient(135deg, #1a0000 0%, #000 50%, #1a0000 100%);
@@ -326,7 +339,8 @@
 
     /* Responsive design */
     @media (max-width: 768px) {
-      header { padding: 6rem 1rem 3rem; }
+      nav { position: static; }
+      header { padding: 2rem 1rem 3rem; }
       section { padding: 3rem 1rem; }
       nav ul { padding: 0.5rem; }
       nav a { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
